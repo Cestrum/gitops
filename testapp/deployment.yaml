@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    app: testapp
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        env: test
+        app: testapp
+    spec:
+      containers:
+        - name: testapp
+          image: cestrum/fedweb:latest
+          ports:
+            - containerPort: 80
+  selector:
+    matchLabels:
+      app: testapp
