@@ -13,5 +13,5 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: "testapp"
+              serviceName: "test-deployment"
               servicePort: 80
